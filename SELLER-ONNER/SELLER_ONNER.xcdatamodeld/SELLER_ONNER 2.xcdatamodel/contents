@@ -5,16 +5,19 @@
         <attribute name="id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="news" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="News" inverseName="contents" inverseEntity="News" syncable="YES"/>
     </entity>
     <entity name="News" representedClassName="News" syncable="YES">
         <attribute name="changed" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="created" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="data_content" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="data_content" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="datacontent" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ingress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contents" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Content" inverseName="news" inverseEntity="Content" syncable="YES"/>
     </entity>
     <entity name="Preview_photos" representedClassName="Preview_photos" syncable="YES">
         <attribute name="descriptions" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,9 +32,9 @@
         <relationship name="preview" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Preview_photos" inverseName="preview" inverseEntity="Preview_photos" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Content" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="News" positionX="-326" positionY="-60" width="128" height="163"/>
-        <element name="UserInformation" positionX="-225" positionY="171" width="128" height="118"/>
+        <element name="Content" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="News" positionX="-326" positionY="-60" width="128" height="195"/>
         <element name="Preview_photos" positionX="7" positionY="180" width="128" height="88"/>
+        <element name="UserInformation" positionX="-225" positionY="171" width="128" height="118"/>
     </elements>
 </model>

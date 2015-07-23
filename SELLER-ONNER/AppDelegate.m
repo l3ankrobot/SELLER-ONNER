@@ -13,9 +13,14 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize isFirstOpenApp;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[CoredataManager sharedDatamanager] setManagedObjectContext:self.managedObjectContext];
+    [[CoredataManager sharedDatamanager] setPersistentStoreCoordinator:self.persistentStoreCoordinator];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    sleep(3);
     // Override point for customization after application launch.
     return YES;
 }

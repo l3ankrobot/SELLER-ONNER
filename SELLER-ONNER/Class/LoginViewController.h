@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  LoginViewController.h
 //  SELLER-ONNER
 //
 //  Created by Bank on 7/20/2558 BE.
 //  Copyright (c) 2558 TANONGSAK SEANGLUM. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UICustomViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface LoginViewController : UICustomViewController
 
 @end
-

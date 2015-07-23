@@ -1,0 +1,52 @@
+//
+//  PrefixHeader.pch
+//  Webservice
+//
+//  Created by Bank on 6/23/2558 BE.
+//  Copyright (c) 2558 TANONGSAK SEANGLUM. All rights reserved.
+//
+
+#ifndef Webservice_PrefixHeader_pch
+#define Webservice_PrefixHeader_pch
+
+#import "Webservice.h"
+#import "ImageLoader.h"
+#import "AppDelegate.h"
+#import "UICustomViewController.h"
+#import "DetailViewController.h"
+#import "Reachability.h"
+#import "Content.h"
+#import "News.h"
+#import "TextNewCell.h"
+#import "QuoteTableViewCell.h"
+#import "Preview_photos.h"
+#import "UserInformation.h"
+#import "CoredataManager.h"
+#import "EventManager.h"
+#import "GraphView.h"
+#import "PopoverView.h"
+#import "CFSSpringTableView.h"
+
+#define SYSTEM_VERSION                              ([[UIDevice currentDevice] systemVersion])
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([SYSTEM_VERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define IS_IOS8_OR_ABOVE                            (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+
+#define kAppdelegate (AppDelegate*)[UIApplication sharedApplication].delegate
+
+#define API @"http://87.251.89.41/application/11424/article/get_articles_list"
+#define error_message @"7Peaks"
+#define error_desc @"Your internet connection lost, please try again."
+#define input_close @"ok"
+#define input_ok @"ok"
+#define delay_timer 5.0f
+//__LINE__
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
